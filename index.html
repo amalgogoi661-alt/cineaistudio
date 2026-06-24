@@ -1,10 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CineAI Studio</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#111827;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:10px;
+background:#3b82f6;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:50px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+}
+
+.pricing{
+padding:60px;
+text-align:center;
+}
+
+.plan{
+background:#1e293b;
+padding:30px;
+margin:20px;
+border-radius:15px;
+display:inline-block;
+width:280px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111827;
+margin-top:50px;
+}
+</style>
 </head>
+
 <body>
-<h1>🎬 CineAI Studio</h1>
-<p>Welcome to CineAI Studio</p>
+
+<header>
+<div class="logo">🎬 CineAI Studio</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">Pricing</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Turn Any Script Into AI Video</h1>
+<p>Create cinematic videos with AI voice, subtitles and effects.</p>
+<button class="btn">Generate Video</button>
+</section>
+
+<section class="features">
+
+<div class="card">
+<h2>🎥 AI Video Generator</h2>
+<p>Script se automatic video create kare.</p>
+</div>
+
+<div class="card">
+<h2>🎤 AI Voiceover</h2>
+<p>Multiple realistic voices support.</p>
+</div>
+
+<div class="card">
+<h2>💰 Earn Credits</h2>
+<p>Ads dekh kar credits kamao.</p>
+</div>
+
+<div class="card">
+<h2>🤝 Refer & Earn</h2>
+<p>Dosto ko invite karke rewards pao.</p>
+</div>
+
+</section>
+
+<section class="pricing">
+
+<h1>Pricing Plans</h1>
+
+<div class="plan">
+<h2>Free</h2>
+<h3>₹0</h3>
+<p>10 Credits</p>
+<p>Watermark</p>
+</div>
+
+<div class="plan">
+<h2>Pro</h2>
+<h3>₹299/mo</h3>
+<p>No Watermark</p>
+<p>500 Credits</p>
+</div>
+
+<div class="plan">
+<h2>Business</h2>
+<h3>₹999/mo</h3>
+<p>4K Export</p>
+<p>5000 Credits</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 CineAI Studio
+</footer>
+
 </body>
 </html>
