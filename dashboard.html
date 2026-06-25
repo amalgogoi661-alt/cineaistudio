@@ -1,17 +1,134 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<title>CineAI Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineAI Studio Dashboard</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#111827;
+padding:20px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+}
+
+button{
+padding:12px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.stat{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>🎬 CineAI Studio Dashboard</h1>
+<header>
+🎬 CineAI Studio Dashboard
+</header>
 
-<p>Welcome User!</p>
+<div class="container">
 
-<button>Create AI Video</button>
-<button>Earn Credits</button>
-<button>Refer & Earn</button>
+<div class="stats">
+<div class="stat">
+<h2>💰 Credits</h2>
+<p>100</p>
+</div>
+
+<div class="stat">
+<h2>🎥 Videos</h2>
+<p>0</p>
+</div>
+
+<div class="stat">
+<h2>🤝 Referrals</h2>
+<p>0</p>
+</div>
+</div>
+
+<div class="card">
+<h2>🎬 Create AI Video</h2>
+
+<textarea rows="6" placeholder="Paste your script here..."></textarea>
+
+<select>
+<option>Cinematic</option>
+<option>Motivational</option>
+<option>Love Story</option>
+<option>Travel</option>
+<option>Horror</option>
+</select>
+
+<select>
+<option>Male Voice</option>
+<option>Female Voice</option>
+<option>Narrator Voice</option>
+</select>
+
+<button>🚀 Generate Video</button>
+
+</div>
+
+<div class="card">
+<h2>📂 My Videos</h2>
+<p>No videos generated yet.</p>
+</div>
+
+<div class="card">
+<h2>💰 Earn Credits</h2>
+<button>Watch Ads</button>
+<button>Refer Friends</button>
+</div>
+
+</div>
 
 </body>
 </html>
