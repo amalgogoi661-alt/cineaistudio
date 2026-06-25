@@ -1,16 +1,76 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login - CineAI Studio</title>
+<title>CineAI Studio Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-<h1>Login</h1>
+<body style="font-family:Arial;text-align:center;padding:50px;">
 
-<input type="email" id="email" placeholder="Email"><br><br>
+<h1>🎬 CineAI Studio Login</h1>
 
-<input type="password" id="password" placeholder="Password"><br><br>
+<input type="email" id="email" placeholder="Email" style="padding:10px;width:250px;"><br><br>
 
-<button>Login</button>
+<input type="password" id="password" placeholder="Password" style="padding:10px;width:250px;"><br><br>
+
+<button onclick="login()" style="padding:10px 20px;">
+Login
+</button>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getAuth, signInWithEmailAndPassword }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyCRw2vnz9i4ktCtQbVmwsbBhSzmuGNMm4w",
+
+authDomain: "cineai-studio-c63ca.firebaseapp.com",
+
+projectId: "cineai-studio-c63ca",
+
+storageBucket: "cineai-studio-c63ca.firebasestorage.app",
+
+messagingSenderId: "67305661468",
+
+appId: "1:67305661468:web:a92b80a76c8d9e84b7abd9"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+window.login = function() {
+
+const email = document.getElementById("email").value;
+
+const password = document.getElementById("password").value;
+
+signInWithEmailAndPassword(auth,email,password)
+
+.then(() => {
+
+alert("Login Successful!");
+
+window.location.href="dashboard.html";
+
+})
+
+.catch((error)=>{
+
+alert(error.message);
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
+```
