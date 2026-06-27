@@ -97,7 +97,7 @@ text-align:center;
 <div class="card">
 <h2>🎬 Create AI Video</h2>
 
-<textarea rows="6" placeholder="Paste your script here..."></textarea>
+<textarea id="scriptInput" rows="6" placeholder="Paste your script here..."></textarea>
 
 <select>
 <option>Cinematic</option>
@@ -113,13 +113,15 @@ text-align:center;
 <option>Narrator Voice</option>
 </select>
 
-<button>🚀 Generate Video</button>
+<button id="generateBtn">🚀 Generate Video</button>
 
 </div>
 
 <div class="card">
 <h2>📂 My Videos</h2>
-<p>No videos generated yet.</p>
+<div id="videoList">
+    <p>No videos generated yet.</p>
+</div>
 </div>
 
 <div class="card">
