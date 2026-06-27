@@ -4,7 +4,7 @@
 // ================================
 
 document.addEventListener("DOMContentLoaded", () => {
-
+alert("app.js loaded");
     const scriptBox =
         document.getElementById("scriptInput") ||
         document.querySelector("textarea");
