@@ -131,7 +131,13 @@ text-align:center;
 </div>
 
 </div>
-<script type="module">
+<import {
+  collection,
+  addDoc,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+import { db } from "./firebase.js";>
 
 import { auth } from "./firebase.js";
 import {
@@ -168,19 +174,34 @@ onAuthStateChanged(auth, (user) => {
 });
 
 // Generate Button
-document.getElementById("generateBtn").addEventListener("click", () => {
+document.getElementById("generateBtn").addEventListener("click", async () => {
 
-  const script = document.getElementById("scriptInput").value.trim();
+    const script = document.getElementById("scriptInput").value.trim();
 
-  if (script === "") {
-    alert("Please enter your script first.");
-    return;
-  }
+    if (!script) {
+        alert("Please enter your script.");
+        return;
+    }
 
-  alert("✅ AI Video Generator will be connected in the next step.");
+    try {
+
+        await addDoc(collection(db, "videos"), {
+            script: script,
+            user: auth.currentUser.email,
+            createdAt: new Date()
+        });
+
+        alert("✅ Script Saved Successfully!");
+
+        document.getElementById("scriptInput").value = "";
+
+    } catch (e) {
+
+        alert(e.message);
+
+    }
 
 });
-
 </script>
 </body>
 </html>
