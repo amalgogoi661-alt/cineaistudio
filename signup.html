@@ -1,69 +1,101 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CineAI Studio Signup</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineAI Studio Signup</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#101827;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.box{
+    background:#1f2937;
+    padding:30px;
+    border-radius:12px;
+    width:350px;
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+a{
+    color:white;
+}
+</style>
+
 </head>
-<body style="font-family:Arial;text-align:center;padding:50px;">
+<body>
 
-<h1>🎬 CineAI Studio Signup</h1>
+<div class="box">
 
-<input type="email" id="email" placeholder="Email" style="padding:10px;width:250px;"><br><br>
+<h2>🎬 Create Account</h2>
 
-<input type="password" id="password" placeholder="Password" style="padding:10px;width:250px;"><br><br>
+<input type="email" id="email" placeholder="Email">
 
-<button onclick="signup()" style="padding:10px 20px;">
-Create Account
-</button>
+<input type="password" id="password" placeholder="Password">
+
+<button id="signupBtn">Create Account</button>
+
+<br><br>
+
+<a href="login.html">Already have an account? Login</a>
+
+</div>
 
 <script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { auth } from "./firebase.js";
 
-import { getAuth, createUserWithEmailAndPassword }
+import { createUserWithEmailAndPassword }
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyCRw2vnz9i4ktCtQbVmwsbBhSzmuGNMm4w",
-
-authDomain: "cineai-studio-c63ca.firebaseapp.com",
-
-projectId: "cineai-studio-c63ca",
-
-storageBucket: "cineai-studio-c63ca.firebasestorage.app",
-
-messagingSenderId: "67305661468",
-
-appId: "1:67305661468:web:a92b80a76c8d9e84b7abd9"
-
-};
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-window.signup = function() {
+document.getElementById("signupBtn").onclick = () => {
 
 const email = document.getElementById("email").value;
-
 const password = document.getElementById("password").value;
 
 createUserWithEmailAndPassword(auth,email,password)
 
-.then(() => {
+.then(()=>{
 
 alert("Account Created Successfully!");
 
-window.location.href="login.html";
+window.location="login.html";
 
 })
 
-.catch((error)=>{
+.catch((err)=>{
 
-alert(error.message);
+alert(err.message);
 
 });
 
