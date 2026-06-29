@@ -3,12 +3,12 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyCRw2vnz9i4ktCtQbVmwsbBhSzmuGNMm4w",
   authDomain: "cineai-studio-c63ca.firebaseapp.com",
   projectId: "cineai-studio-c63ca",
   storageBucket: "cineai-studio-c63ca.firebasestorage.app",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  messagingSenderId: "67305661468",
+  appId: "1:67305661468:web:1523f56af6c8d5d7b7abd9"
 };
 
 const app = initializeApp(firebaseConfig);
